@@ -61,6 +61,40 @@ export const curriculum = [
       passingScore: 80,
       unlocked: index === 0
     }))
+  },
+  {
+    level: 'HSK 3',
+    book: 'Panda World HSK 3',
+    totalLessons: 20,
+    lessons: [
+      { id: 1, title: '谈人物特征', vietnamese: 'Bàn về đặc trưng nhân vật' },
+      { id: 2, title: '谈家乡', vietnamese: 'Bàn về quê hương' },
+      { id: 3, title: '谈生活习惯', vietnamese: 'Bàn về thói quen cuộc sống' },
+      { id: 4, title: '谈住房', vietnamese: 'Bàn về nhà ở' },
+      { id: 5, title: '谈考试', vietnamese: 'Bàn về thi cử' },
+      { id: 6, title: '谈购物', vietnamese: 'Bàn về mua sắm' },
+      { id: 7, title: '谈假日经历', vietnamese: 'Bàn về trải nghiệm ngày nghỉ' },
+      { id: 8, title: '各有所爱', vietnamese: 'Mỗi người có sở thích riêng' },
+      { id: 9, title: '谈职业', vietnamese: 'Bàn về nghề nghiệp' },
+      { id: 10, title: '谈旅行计划', vietnamese: 'Bàn về kế hoạch du lịch' },
+      { id: 11, title: '谈休闲娱乐', vietnamese: 'Bàn về vui chơi giải trí' },
+      { id: 12, title: '谈时尚', vietnamese: 'Bàn về thời thượng' },
+      { id: 13, title: '售后服务', vietnamese: 'Dịch vụ sau bán hàng' },
+      { id: 14, title: '祝贺', vietnamese: 'Chúc mừng' },
+      { id: 15, title: '谈压力', vietnamese: 'Bàn về áp lực' },
+      { id: 16, title: '网络与手机', vietnamese: 'Mạng internet và điện thoại' },
+      { id: 17, title: '谈私家车', vietnamese: 'Bàn về xe tư nhân' },
+      { id: 18, title: '环境', vietnamese: 'Môi trường' },
+      { id: 19, title: '地理', vietnamese: 'Địa lý' },
+      { id: 20, title: '历史', vietnamese: 'Lịch sử' }
+    ].map((lesson, index) => ({
+      ...lesson,
+      level: 'HSK 3',
+      stages,
+      order: index + 1,
+      passingScore: 80,
+      unlocked: index === 0
+    }))
   }
 ]
 

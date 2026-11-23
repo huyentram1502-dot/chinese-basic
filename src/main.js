@@ -946,7 +946,16 @@ app.addEventListener('click', event => {
     render()
     return
   }
+// Chuyển trang trong ứng dụng
+  const pageButton = event.target.closest('[data-page]')
 
+  if (pageButton) {
+    if (!currentUser) return
+
+    currentPage = pageButton.dataset.page
+    render()
+    return
+  }
   // Chọn chặng học
   const stageButton = event.target.closest('[data-stage]')
 
