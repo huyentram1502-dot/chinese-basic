@@ -1,4 +1,4 @@
-import { lesson01 } from './lessons/hsk3/lesson-01.js'
+import { lesson01 } from './lessons/HSK3/lesson-01.js'
 export const stages = [
   {
     id: 1,
