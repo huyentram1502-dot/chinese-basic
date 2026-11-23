@@ -40,41 +40,25 @@ export function isLessonCompleted(level, lessonId) {
 
 // Kiểm tra bài học có được mở khóa không
 export function isLessonUnlocked(level, lessonId) {
-  const levelIndex = curriculum.findIndex(
+  const currentBook = curriculum.find(
     item => item.level === level
   )
 
-  if (levelIndex === -1) return false
+  if (!currentBook) return false
 
-  const currentBook = curriculum[levelIndex]
   const lessonIndex = currentBook.lessons.findIndex(
     lesson => lesson.id === lessonId
   )
 
   if (lessonIndex === -1) return false
 
-  // Bài đầu tiên của HSK 1 luôn mở
-  if (levelIndex === 0 && lessonIndex === 0) {
-    return true
-  }
+  // Bài 1 của tất cả trình độ HSK 1–6 luôn được mở
+  if (lessonIndex === 0) return true
 
-  // Nếu không phải bài đầu tiên thì kiểm tra bài trước
-  if (lessonIndex > 0) {
-    const previousLesson = currentBook.lessons[lessonIndex - 1]
+  // Các bài tiếp theo cần hoàn thành bài liền trước
+  const previousLesson = currentBook.lessons[lessonIndex - 1]
 
-    return isLessonCompleted(level, previousLesson.id)
-  }
-
-  // Bài đầu tiên của cấp HSK tiếp theo
-  // cần hoàn thành bài cuối của cấp trước
-  const previousBook = curriculum[levelIndex - 1]
-
-  if (!previousBook) return false
-
-  const lastLesson =
-    previousBook.lessons[previousBook.lessons.length - 1]
-
-  return isLessonCompleted(previousBook.level, lastLesson.id)
+  return isLessonCompleted(level, previousLesson.id)
 }
 
 // Kiểm tra cấp học có được mở không

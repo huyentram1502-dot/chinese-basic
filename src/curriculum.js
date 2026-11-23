@@ -1,5 +1,5 @@
-
-const stages = [
+import { lesson01 } from './lessons/hsk3/lesson-01.js'
+export const stages = [
   {
     id: 1,
     name: 'Từ vựng',
@@ -93,9 +93,9 @@ export const curriculum = [
       stages,
       order: index + 1,
       passingScore: 80,
-      unlocked: index === 0
+      unlocked: index === 0,
+      // Liên kết dữ liệu bài học
+      content: index === 0 ? lesson01 : null
     }))
   }
 ]
-
-export { stages }
